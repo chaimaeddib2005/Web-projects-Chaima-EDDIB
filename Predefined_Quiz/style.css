@@ -1,0 +1,95 @@
+.quiz-container {
+    margin: 2vw;
+}
+
+.quiz_title {
+    text-align: center;
+    color: blueviolet;
+}
+
+.question-container {
+    margin: 2vw;
+    line-height: 3vw;
+}
+
+.question {
+    background-color: lightgrey;
+    border: 1px solid black;
+    padding: 1vw;
+}
+
+.answers {
+    margin: 2vw;
+    line-height: 3vw;
+    border: 1px solid black;
+    padding: 1vw;
+}
+
+.Button {
+    display: block;
+    margin: 2vw auto;
+    text-align: center;
+    padding: 1.5vw;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.Button:hover {
+    background-color: darkgreen;
+}
+
+.hidden {
+    display: none;
+}
+
+.next-btn {
+    margin: 2vw;
+    float: right;
+    background-color: blue;
+    color: white;
+    padding: 1vw;
+    border: none;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Correct & Incorrect Answer Styles */
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
+}
+
+/* Score section */
+#score-container {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: blue;
+    margin-bottom: 2vw;
+    padding: 1vw;
+    border-bottom: 2px solid black;
+}
+.final-score {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: blue;
+    margin-bottom: 2vw;
+    padding: 1vw;
+    border:2px green solid;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding: 5vw;
+}

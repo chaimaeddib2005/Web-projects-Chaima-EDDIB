@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="formContainer">
+            <form>
+                <h2 class="titre">Choose Quizz</h2>
+                <br>
+                <label>
+                    Number of Questions:
+                </label>
+                <br>
+                <input class="Inputs" id="number" type="number" name="number" min="1" max="10" required>
+                <br>
+                <label>
+                    Select Category:
+                </label>
+                <br>
+                <select class="Inputs" id="category" name="category" required>
+                    <option value="9">General Knowledge</option>
+                    <option value="10">Books</option>
+                    <option value="11">Film</option>
+                    <option value="12">Music</option>
+                    <option value="13">Musicals & Theatres</option>
+                    <option value="14">Television</option>
+                    <option value="15">Video Games</option>
+                    <option value="16">Board Games</option>
+                    <option value="17">Science & Nature</option>
+                    <option value="18">Computers</option>
+                    <option value="19">Mathematics</option>
+                    <option value="20">Mythology</option>
+                    <option value="21">Sports</option>
+                    <option value="22">Geography</option>
+                    <option value="23">History</option>
+                    <option value="24">Politics</option>
+                    <option value="25">Art</option>
+                    <option value="26">Celebrities</option>
+                    <option value="27">Animals</option>
+                    <option value="28">Vehicles</option>
+                    <option value="29">Comics</option>
+                    <option value="30">Gadgets</option>
+                    <option value="31">Japanese Anime & Manga</option>
+                    <option value="32">Cartoon & Animations</option>
+                </select>
+                <br>
+                <label>
+                    Select Difficulty:
+                </label>
+                <br>
+                <select class="Inputs" id="difficulty" name="difficulty" required>
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
+                </select>
+                <br>
+                <label>
+                    Select Type:
+                </label>
+                <br>
+                <select class="Inputs" id="type" name="type" required>
+                    <option value="multiple">multiple</option>
+                    <option value="boolean">boolean</option>
+                </select>
+                <br>
+                <label>
+                    Select Encoding:
+                </label>
+                <br>
+                <select class="Inputs" id="encoding" name="encoding" required>
+                    <option value="default">url3986</option>
+                    <option value="url3986">base64</option>
+                </select>
+                <br>
+                <button type="submit" class="Submission" id="generateQuiz">Generate Quizz</button>
+            </form>
+
+        </div>
+        <div class="hidden" id="StartQuizPage">
+            <div class="Header" id="Header">
+                <h2 class="quiz_title" id="title">Quizz</h2>
+                <button class="Button" id="start-btn">Start Quiz</button>
+            </div>
+    
+            <div id="quiz-container"></div> <!-- This will hold the quiz content dynamically -->
+    
+        </div>
+        <script src="quiz.js"></script>
+    </body>
+</html>
