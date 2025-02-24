@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Tâches - Vue.js 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .task-manager {
+            max-width: 500px;
+            margin: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .completed {
+            background-color: #d4edda;
+            text-decoration: line-through;
+        }
+        .filters button {
+            margin: 5px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .filters .active {
+            background-color: #007bff;
+            color: white;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .status {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="task-manager">
+        <h2>Gestion des tâches</h2>
+        
+        <p>Total des tâches : {{ totalTasks }}</p>
+
+        <!-- Filtres -->
+        <div class="filters">
+            <button @click="filter = 'all'" :class="{ active: filter === 'all' }">Toutes</button>
+            <button @click="filter = 'todo'" :class="{ active: filter === 'todo' }">À faire</button>
+            <button @click="filter = 'done'" :class="{ active: filter === 'done' }">Terminées</button>
+        </div>
+
+        <!-- Liste des tâches -->
+        <ul>
+            <li v-for="task in filteredTasks" :key="task.id" :class="{ completed: task.completed }">
+                <h3>{{ task.title }}</h3>
+                <p>{{ task.description }}</p>
+                <p v-if="task.completed" class="status">✔ Terminée</p>
+                <button v-show="!task.completed" @click="markAsDone(task)">Marquer comme terminée</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    tasks: [],
+                    filter: 'all'
+                };
+            },
+            computed: {
+                totalTasks() {
+                    return this.tasks.length;
+                },
+                filteredTasks() {
+                    if (this.filter === 'todo') {
+                        return this.tasks.filter(task => !task.completed);
+                    } else if (this.filter === 'done') {
+                        return this.tasks.filter(task => task.completed);
+                    }
+                    return this.tasks;
+                }
+            },
+            methods: {
+                markAsDone(task) {
+                    task.completed = true;
+                },
+                async loadTasks() {
+                    const response = await fetch("tasks.json");
+                    this.tasks = await response.json();
+                }
+            },
+            mounted() {
+                this.loadTasks();
+            }
+        });
+
+        app.mount("#app");
+    </script>
+
+</body>
+</html>

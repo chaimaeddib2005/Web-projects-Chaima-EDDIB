@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Manipulation de Vue</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+		#monapp {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin-top: 20px;
+			height: 100vh;
+		}
+    </style>
+</head>
+<body>
+
+<div id="monapp">
+    <h2>Entrée de texte sans espace</h2>
+    <input type="text" :value="texte" @input="verifierEspace" placeholder="Entrez du texte sans espace">
+    <p v-if="messageErreur" class="warning">❌ L'espace n'est pas autorisé !</p>
+</div>
+
+<script>
+    const appli = {
+        data() {
+            return {
+                texte: "",
+                messageErreur: false
+            };
+        },
+        methods: {
+            verifierEspace(event) {
+                let valeur = event.target.value;
+                if (valeur.includes(" ")) {
+                    this.messageErreur = true;
+                    this.texte = valeur.replace(/\s/g, ""); // Remove spaces
+                } else {
+                    this.messageErreur = false;
+                    this.texte = valeur;
+                }
+            }
+        }
+    };
+
+    Vue.createApp(appli).mount("#monapp");
+</script>
+
+</body>
+</html>
