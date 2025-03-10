@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: #5c40c9;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    height: 60px;
+}
+
+header h1 {
+    flex-grow: 1;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Filters - Now in a Row */
+.filtres{
+
+    justify-content: center;
+    gap: 16px;
+    padding: 12px;
+    margin: 16px 0;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #131111;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 16px;
+    padding: 12px;
+    margin: 16px 0;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #131111;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.First{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.cat{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin-top: 10px;
+    border: 1px solid #131111;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Products Grid - Two Items per Row */
+.item{
+    border: 1px solid #131111;
+    padding: 1px;
+    margin: 2px;
+}
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-top: 8px;
+}
+
+.prix {
+    color: #5c40c9;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.Button {
+    background-color: #5c40c9;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #4329a6;
+}
+
+.tt {
+    color: red;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* Fixed "Panier" at the Bottom */
+.panier {
+   font-size: 2vw;
+   text-decoration: underline;
+    color: violet;
+    font-weight: bold;
+    background-color: blue;
+    justify-self: center;
+    
+}
+.b2{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.3s;
+    margin-left: 2px;
+}
